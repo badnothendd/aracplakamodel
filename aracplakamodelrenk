@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct aracsaat {
+	char saati[10];
+};
+struct aracgenelozllklr {
+	char plaka[8];
+	char model[20];
+	char renk[15];
+	struct aracsaat saat;
+};
+struct aracgenelozllklr bilgileral() {
+	struct aracgenelozllklr araclar;
+	scanf("%s%s%s%s", araclar.plaka,araclar.model,araclar.renk,araclar.saat.saati);
+	return araclar;
+};
+void araclistele (struct aracgenelozllklr araba) {
+	printf("\n plaka: %s\n model: %s\n renk: %s\n arac giris saati: %s", araba.plaka, araba.model, araba.renk, araba.saat.saati);
+}
+
+int main() {
+	struct aracgenelozllklr arac[3];
+	int i;
+	   for (i=0;i<2;i++) {
+		printf("\n lutfen %d. aracin plaka, model, renk ve giris saatini yaziniz:\n",i+1);
+		arac[i]=bilgileral();		
+	}
+	printf("\n\n******KAPASITE DOLMUSTUR*******");
+	   for(i=0;i<2;i++) {
+		printf("\n");
+	    araclistele(arac[i]);
+	    printf("\n");
+	}
+	return 0;
+}
